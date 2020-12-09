@@ -1,0 +1,40 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block body %}
+    <!--API Key: AIzaSyABDJpoSzpLNDcuu_NEpHKNdCopem7yD5A -->
+	<script
+		src="https://maps.googleapis.com/maps/api/js?AIzaSyABDJpoSzpLNDcuu_NEpHKNdCopem7yD5A&callback=initMap&libraries=&v=weekly"
+		defer
+    ></script>
+
+    <script>
+		function initMap()
+		{
+				const Columbus = { lat: 40.002220, lng: -83.016570 };
+
+				const map = new google.maps.Map(document.getElementById("map"),
+				{
+				  zoom: 14,
+				  center: Columbus,
+				});
+
+				const marker = new google.maps.Marker
+				({
+					position: Columbus,
+					map: map,
+				 });
+		  }
+    </script>
+
+    <br>
+	<h2 id="who">Where are we located?</h2>
+	<br>
+	<div class="container">
+		<div id="map"></div>
+	</div>
+	<br>
+	<h4 id="where">Directions:</h4>
+	<h5 id="where">2055 Millikin Rd, Columbus, OH 43210</h5>
+	<br>
+{% endblock %}

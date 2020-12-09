@@ -1,0 +1,25 @@
+{% extends 'Base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block body %}
+    <div class="card">
+            <h5 class="card-header">Edit Feedback</h5>
+            <div class="card-body">
+                <h5 class="card-title">Task:</h5>
+                    <form action = "{% url 'upcontact' name.id%}" method="post">
+                    {% csrf_token %}
+                        <div class="row">
+                            <div class = "col-8">
+                                {{ form|crispy }}
+                                <br>
+                                <br>
+                                <a href="{% url 'requests' %}" class="btn btn-primary"> <--Go back</a>
+                                <button type="submit" class="btn btn-secondary">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+{% endblock %}

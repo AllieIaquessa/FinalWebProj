@@ -1,0 +1,49 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block body %}
+	<div class="flex-container" id="header3">
+		<div class="row">
+			<div class="col-3 border-right">
+				<p>Name</p>
+			</div>
+			<div class="col-3 border-right">
+				<p>Email</p>
+			</div>
+			<div class="col-3 border-right">
+				<p>Stars</p>
+			</div>
+			<div class="col-3">
+				<p>Review</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex-container" id="request">
+		{% for name in reviews %}
+			<div class="row">
+				<div class="col-3 border-right">
+					<p>{{ name }}</p>
+				</div>
+				<div class="col-3 border-right">
+					<p>{{ name.email }}</p>
+				</div>
+				<div class="col-3 border-right">
+					<p>{{ name.stars }}</p>
+				</div>
+				<div class="col-3">
+					<p>{{ name.response }}</p>
+				</div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <a href = "{%url 'delreview' name.id %}"><button type = "button" class = "btn btn-danger">Delete</button></a>
+                </div>
+                <div class="col-3">
+                    <a href = "{%url 'upreview' name.id %}"><button type = "button" class = "btn btn-primary">Update</button></a>
+                </div>
+            </div>
+            <hr>
+		{% endfor %}
+	</div>
+{% endblock %}

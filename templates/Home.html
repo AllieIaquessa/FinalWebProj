@@ -1,0 +1,42 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-1">
+            <button onclick = "prev()" type="button" class="btn" id="left">&#8810;</button>
+        </div>
+        <div class="col-10">
+            <img src="{% static "images/JSslide1.jpg" %}" alt="shape" id="pic" class="img-fluid">
+        </div>
+        <div class="col-1">
+            <button onclick = "next()" type="button" class="btn" id="right">&#8811;</button>
+        </div>
+    </div>
+
+    <script>
+        var myImage = document.getElementById("pic");
+        var imageArray = ["{% static "images/JSslide1.jpg" %}", "{% static "images/JSslide2.jpg" %}", "{% static "images/JSslide3.jpg" %}", "{% static "images/JSslide4.jpg" %}"]
+        var imageIndex = 0;
+
+        function prev() {
+            imageIndex--;
+            if (imageIndex < 0) {
+            imageIndex = imageArray.length-1;
+            }
+            changeImage();
+        }
+
+        function next() {
+            imageIndex++;
+            if (imageIndex >= imageArray.length) {
+            imageIndex = 0;
+            }
+            changeImage();
+        }
+
+        function changeImage() {
+          myImage.src = imageArray[imageIndex];
+        }
+    </script>
+{% endblock %}

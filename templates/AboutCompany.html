@@ -1,0 +1,67 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block body %}
+    <!--Body-->
+	<br>
+
+    <img src="{% static "images/InsideBank.jpg" %}" alt="Bank" id="InsideBank" class="img-fluid">
+
+	<br><br>
+
+	<h2 id="who">Who Are We?</h2>
+
+	<section id="abt">
+
+		Welcome to our headcourters located somewhere in the middle of Ohio. Established fairly recently,
+		we have over $400 in assets and three banking offices throughout the United
+		 States. As a full-service institution that is completely allowed to say they are a bank, Legitimate
+		 Bank offers consumer and commerical banking, home mortgages, and investment services. Some say we
+		 should be named "Top Workplace" but Liberty bank has that. In the next year we aim to kick Liberty
+		 off their throne and take our top workplace award. We at Legitimate Bank aim to maintain a longstanding
+		  commitment to superior personal service and unparalleled community involvement.
+	</section>
+
+	 <hr>
+
+	<section>
+
+		<div class="flex-container">
+		<section>
+			<div class="row">
+					<div class="col-6">
+						<section>
+                        <img src="{% static "images/BusinessWoman.jpg" %}" alt="Melanie Rupale" id="Employee" class="img-fluid">
+						</section>
+					</div>
+
+					<div class="col-6" id="header2">
+						<h4 id="Employees">CEO, Melanie Rupale</h4>
+
+					</div>
+			</div>
+			<br>
+			<div class="row">
+					<div class="col-6">
+                        <img src="{% static "images/BusinessMan.jpg" %}" alt="Mark Tramell" id="Employee" class="img-fluid">
+					</div>
+					<div class="col-6" id="header2">
+						<h4 id="Employees">Finance Director, Mark Tramell</h4>
+
+					</div>
+			</div>
+			<br>
+			<div class="row">
+					<div class="col-6">
+                        <img src="{% static "images/BusinessMan2.jpg" %}" alt="Erik Green" id="Employee" class="img-fluid">
+					</div>
+					<div class="col-6" id="header2">
+						<h4 id="Employees">Chief Financial Officer, Erik Green</h4>
+
+					</div>
+			</div>
+			<br>
+			</section>
+		</div>
+      </section>
+{% endblock %}

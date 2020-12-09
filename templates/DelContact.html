@@ -1,0 +1,20 @@
+{% extends 'Base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block body %}
+    <div class="card">
+            <h5 class="card-header">Delete Feedback</h5>
+            <div class="card-body">
+                <h5 class="card-title">Are you sure you want to delete feedback from {{ name }}</h5>
+
+                <form method="post" action="{% url 'delcontact' name.id %}">
+                    {% csrf_token %}
+                    <a href="{% url 'requests' %}" class="btn btn-primary"><--Go back</a>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+{% endblock %}
+
+
